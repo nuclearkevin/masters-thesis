@@ -1,0 +1,106 @@
+\documentclass{dissertation}
+
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{pdflscape}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[final]{pdfpages}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{makecell}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{nameref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[acronym]{glossaries}
+\usepackage{float}
+\usepackage[justification=centering]{caption}
+\makeglossaries
+
+\theoremstyle{definition}
+\newtheorem*{objective}{Objective}
+ 
+\theoremstyle{remark}
+\newtheorem*{constraint}{Constraints}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
+\newcommand{\compresslist}{
+	\setlength{\itemsep}{1pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}
+	}
+\onehalfspacing
+
+\renewcommand*{\lstlistlistingname}{List of Listings}
+
+\begin{document}
+
+%% Specify the title and author of the thesis. This information will be used on
+%% the title page (in title/title.tex) and in the metadata of the final PDF.\documentclass{dissertation}
+
+% Format: \title[Optional Subtitle]{Title}
+\title{Coupled Radiation Transport and Mobile Depletion for Health Physics and Environmental Impact Applications} 
+\author{Kevin}{Sawatzky}
+
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+\frontmatter
+
+\doublespacing
+\include{title/title}
+\setcounter{page}{2}
+\include{frontmatter/exam_info}
+%% The (optional) dedication can be used to thank someone or display a
+%% significant quotation.
+% \dedication{\epigraph{This perpetual motion machine she made today is a joke, it just keeps going faster and faster... \\ Lisa ... In this house, we OBEY the laws of thermodynamics!}{Homer Simpson}}
+\include{abstract/abstract}
+\include{frontmatter/declaration}
+\include{frontmatter/contributions}
+\include{acks/acks}
+\tableofcontents
+\listoffigures
+\listoftables
+\addcontentsline{toc}{chapter}{List of Listings}
+\lstlistoflistings
+\include{frontmatter/acronyms}
+
+%\onehalfspacing
+\doublespacing
+% \include{preface/preface}
+% \include{summary/summary}
+
+%% Use Arabic numerals for the page numbers of the chapters.
+\mainmatter
+
+%% Turn on thumb indices.
+%\thumbtrue
+
+\include{chapters/1_introduction}
+\include{chapters/2_work_state}
+\include{chapters/3_lit_review}
+\include{chapters/4_solver}
+\include{chapters/5_verification}
+\include{chapters/6_demos}
+\include{chapters/7_conclusions}
+\include{chapters/8_recommendations}
+
+\references{dissertation.bib}
+
+%% Use letters for the chapter numbers of the appendices.
+\appendix
+
+%% Turn off thumb indices for unnumbered chapters.
+\thumbfalse
+
+% \include{cv/cv}
+\include{publications/publications}
+
+\end{document}
+

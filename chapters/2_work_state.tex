@@ -1,0 +1,21 @@
+\chapter{Statement of Work} 
+\label{statement_of_work}
+\section{Problem Statement}
+\label{statement_of_work:ps}
+
+Radiation transport and mobile depletion are key physics to consider when performing analyses related to health physics or environmental impact assessments, especially regarding novel reactor designs that have not been fully characterized, such as Generation IV reactors or \acrshort{smrs}. Despite the growing need for high-fidelity radiation transport and mobile depletion capabilities for predictive modelling of novel source terms and radiation hazards, both the open literature and the open-source capabilities in the \acrshort{moose} ecosystem lack such a tool.
+The development of a new radiation transport and mobile depletion code is motivated by specific limitations of these established software packages. The vast majority of radiation transport solvers are standalone tools which do not easily accept dynamic particle sources, which are required for computing the radiation dose from a plume. Many \acrshort{cfd} codes have the capability to compute species transport, a limited set of these codes include radioactive decay and none include all of the capabilities required to model the transmutation of an arbitrary fluid in a neutron field. Finally, existing methods are often not designed for the multi-scale coupling required. Therefore, a new radiation transport and mobile depletion solver must be developed to satisfy the requirements of \texttt{Caribou}.
+
+\section{Statement of Objectives}
+\label{statement_of_work:so}
+The main objective of this work was to incorporate neutral particle radiation transport and mobile depletion capabilities into the suite of capabilities provided by \texttt{Caribou} through the development of a new \acrshort{moose} mini-application called \acrshort{gnat}, which will be distributed with \texttt{Caribou}. \acrshort{gnat} enables the calculation of both fixed and mobile ex-core nuclide source terms for radionuclide dispersion calculations and external dosimetry from various radiation sources; all within \texttt{Caribou}.
+
+\section{Project Tasks}
+\label{statement_of_work:tasks}
+To accomplish the objective of the work previously outlined, the project was broken up into several discrete tasks:
+\begin{itemize}
+    \item Development of a neutral particle transport solver. This includes investigating appropriate discretization strategies for source-driven radiation transport, surveying the literature for open-source radiation transport solvers, and the development of the radiation transport solver. See Section~\ref{lit_review:radiation_transport} for a survey of open-source codes and radiation transport methods. See Section~\ref{solver:radiation_transport} for a description of the implemented radiation transport solver.
+    \item Development of a mobile depletion solver. This includes investigating methods for trace species transport, surveying the literature for appropriate discretization schemes, developing the solver, and coupling it with the radiation transport solver. See Section~\ref{lit_review:mass_transport} for a survey of species transport methods. Section~\ref{solver:depletion} contains a description of the mobile depletion solver, and Section~\ref{solver:implementation} discusses use cases for coupled radiation transport and mobile depletion.
+    \item Verifying the newly developed solvers using benchmark problems and analytical solutions to the governing equations. See Chapter~\ref{verification} for the results of the verification performed.
+    \item Demonstrating the capabilities of the solver through the analysis of several coupled radiation transport and mobile depletion problems. See Chapter~\ref{demos}.
+\end{itemize}
